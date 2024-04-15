@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Hotwheels</title>
+</head>
+<body class="body1">
+    <div class="loader-wrapper" id="loader">
+        Cargando...
+        </div>
+        <main id="main">
+            <section id="section1" class="section_1">
+                <ul>
+                    <button id="logo" class="logo">Hotwheels</button>
+                </ul>
+                <ul>
+                    <a href="../index.html">regresar</a>
+
+                    <button id="butto" class="button_1">autos que yo quisiera tener</button>
+                    <button id="button1" class="button_1">modo oscuro</button>
+                    <button id="button2" class="button_1">modo claro</button>
+
+                    <script>
+                    
+    let button1 = document.getElementById("button1")
+    button1.addEventListener("click", modoOscuro)
+    button1.style.backgroundColor = "white"
+    button1.style.color = "#333"
+
+    let section1 = document.getElementById("section1")
+    section1.style.backgroundColor = "white"
+    let butto = document.getElementById("butto")
+    butto.style.backgroundColor = "white"
+    butto.style.color = "#333"
+    let logo = document.getElementById("logo")
+    logo.style.backgroundColor = "white"
+    let ul4 = document.getElementById("ul_4")
+
+    let button2 = document.getElementById("button2")
+    button2.addEventListener("click", modoClaro)
+    button2.style.display = "none"
+
+    let main = document.getElementById("main")
+
+    function modoOscuro(){
+        main.style.backgroundColor = "#444444"
+        button2.style.display = ""
+        button1.style.display = "none"
+        section1.style.backgroundColor = "#333"
+        button2.style.backgroundColor = "#333"
+        button2.style.color = "antiquewhite"
+        butto.style.backgroundColor = "#333"
+        butto.style.color = "antiquewhite"
+        logo.style.backgroundColor = "#333"
+    }
+
+    function modoClaro(){
+        main.style.backgroundColor = "white"
+        button1.style.display = ""
+        button2.style.display = "none"
+        section1.style.backgroundColor = "white"
+        button1.style.backgroundColor = "white"
+        button1.style.color = "#333"
+        butto.style.backgroundColor = "white"
+        butto.style.color = "#333"
+        logo.style.backgroundColor = "white"
+    }
+
+    window.addEventListener("load", function() {
+        const loader = document.getElementById("loader");
+        const content = document.getElementById("content");
+    
+        loader.style.display = "none";
+        content.style.display = "";
+    });
+                    </script>
+                </ul>
+            </section>    
+            <section id="section_3">
+                <h1 class="logo_1">Resultado de Búsqueda</h1>
+            </section>
+
+  <script>
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    var busqueda = getQueryParam("query");
+
+        var imagenesPorBusqueda = {
+    "mustang": "../img/mustang.jpg",
+    "toyota supra": "../img/20230818_133046.jpg",
+    "porshe": "../img/el primero1.jpg",
+    "formula 1": "../img/f1.jpg",
+    };
+
+    var busqueda = getQueryParam("query");
+
+    var imagenAMostrar = imagenesPorBusqueda[busqueda] || "../img/fallo.jpg";
+
+    var imagen = document.createElement("img");
+    imagen.classList = ("galeria1")
+    imagen.src = imagenAMostrar;
+
+    // Obtén una referencia al elemento con id "section_3"
+    var section3 = document.getElementById("section_3");
+
+    // Agrega la imagen como un hijo de la sección
+    section3.appendChild(imagen);
+
+  </script>
+</body>
+</html>
